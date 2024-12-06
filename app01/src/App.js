@@ -1,40 +1,26 @@
 import React, { useState } from 'react';
+import Nota from './componentes/Nota'
+import Resultado from './componentes/Resultado';
+
+
+
+
 
 export default  function App() {
-  const [form, setForm] = useState({"nome":"kel","curso":"react","ano":"2021"});
-        const handlFormChange=(e)=>{
-
-            if (e.target.getAttribute('name')=='fnome'){
-                setForm({"nome":e.target.value,"curso":form.curso,"ano":form.ano})
-            
-            }else if(e.target.getAttribute('name')=='fcurso'){
-                setForm({"nome":form.nome,"curso":e.target.value,"ano":form.ano})
-            
-            
-            }else if(e.target.getAttribute('name')=='fano'){
-                setForm({"nome":form.nome,"curso":form.curso,"ano":e.target.value})
-            
-
-
-            }
-
-        }
+const [nota1,setNota1]=useState(0)
+const [nota2,setNota2]=useState(0)
+const [nota3,setNota3]=useState(0)
+const [nota4,setNota4]=useState(0)
 
   return (
     <>
-    
-       <label>nome:</label>
-       <input type='text' name ='fnome' value={form.nome} onChange={(e)=>handlFormChange(e)} /><br/>
-       
-       <label>curso:</label>
-       <input type='text' name ='fcurso' value={form.curso} onChange={(e)=>handlFormChange(e)}  /><br/>
-       
-       <label>ano:</label>
-       <input type='text' name ='fano' value={form.ano} onChange={(e)=>handlFormChange(e)}  /><br/>
+    <Nota num={1} nota={nota1} setNota={setNota1}/>
+    <Nota num={2} nota={nota2} setNota={setNota2}/>
+    <Nota num={3} nota={nota3} setNota={setNota3}/>
+    <Nota num={4} nota={nota4} setNota={setNota4}/>
+    <Resultado somaNotas={parseFloat(nota1)+parseFloat (nota2)+parseFloat(nota3)+parseFloat(nota4)}/>
+  
+    </>    
 
-      <p>Nome digitado: {form.nome}</p>
-      <p>curso digitado: {form.curso}</p>
-      <p>Ano digitado: {form.ano}</p>
-</>    
   );
 }
