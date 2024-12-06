@@ -1,0 +1,13 @@
+.caixa
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.texto{
+
+  color: rgb(71, 82, 234);
+  font-size: 1em;
+}
