@@ -5,7 +5,7 @@ export default function App(){
 return(
 <>
 <h1>Componente de Classe App</h1><br/>
-<Carro canal ="CFB cursos" curso="Curso React"/>
+<Carro fator={10} />
 
 
 </>
